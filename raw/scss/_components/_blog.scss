@@ -1,58 +1,45 @@
-div.content {
-    border: 1px solid #000;
-}
-.btn-group {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-    .btn {
-        padding: 14px;
-        border-radius: 0;
-        font-size: 16px;
-        border: solid 1px #000;
-    }
-}
 div.wrapper-container {
-  p {
-    text-align: left;
-  }
     border: 1px solid #000;
-    span.blog-title{
-      h1{
-        padding: 10px 10px 0 10px;
-      }
+    p {
+        text-align: left;
     }
-    span.date{
-      p {
-        font-size: $date-size;
+    span.blog-title {
+        margin-bottom: 10px;
+        h1 {
+            padding: 10px 10px 0;
+        }
+    }
+    span.date {
+        margin-bottom: 10px;
+        p {
+            font-size: $date-size;
+            padding: 10px;
+            margin: 0;
+        }
+    }
+}
+
+span.content {
+    p {
         padding: 10px;
         margin: 0;
-      }
+        &.paragraphClass {
+            height: auto;
+            max-width: 100%;
+            overflow: hidden;
+            padding: 0;
+            margin: 0 auto;
+            img.imgClass {
+                width: 100%;
+                height: auto;
+                padding: 0;
+                margin: 0;
+            }
+        }
+        &.videoClass {
+            width: 100% !important;
+            height: auto !important;
+            padding: 0;
+        }
     }
-}
-span.content {
-  p {
-    padding: 10px;
-    margin: 0;
-  }
-  p.paragraphClass {
-    height: auto;
-    max-width:100%;
-  	overflow:hidden;
-    padding: 0;
-    margin: 0 auto;
-  	img.imgClass {
-  		width: 100%;
-      height: auto;
-      padding: 0;
-      margin: 0;
-  	}
-  }
-}
-.blog-title {
-    margin-bottom: 10px;
-}
-.date {
-    margin-bottom: 10px;
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title></title>
     <!--bower:css-->
@@ -8,97 +9,112 @@
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/lib/trumbowyg/dist/ui/trumbowyg.css" />
-    <link rel="stylesheet" href="/lib/trumbowyg/dist/plugins/colors/ui/trumbowyg.colors.css" />
+    <link rel="stylesheet" href="/lib/trumbowyg/dist/plugins/colors/ui/trumbowyg.colors.min.css" />
     <!--endbower-->
 
     <!--inject:css-->
     <link rel="stylesheet" href="/css/main.min.css">
     <!--endinject-->
 
-  </head>
-  <body>
+    <style>
+        /*span.content p.videoClass{
+          padding: 0;
+        }
+        p.videoClass {
+            width: 100% !important;
+            height: auto !important;
+            padding: 0;
+        }*/
+    </style>
+
+</head>
+
+<body>
     <div class="row">
-    <div class="side-menu">
-      <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <!-- Hamburger -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+        <div class="side-menu">
+            <nav class="navbar navbar-default" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <!-- Hamburger -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-          <!-- Brand -->
-          <a class="navbar-brand" href="#">
-            <svg class="logo" align="center" viewBox="0 0 71 70" xmlns="http://www.w3.org/2000/svg">
-              <title>Logo-sm</title>
-              <g fill="none" fill-rule="evenodd">
-                <path fill="#88D498" d="M.83 0h69.963v69.702H.83z" />
-                <text font-family="LucidaGrande, Lucida Grande" font-size="44.544" fill="#FFF" transform="translate(.83)">
-                  <tspan x="20.989" y="51.713">R</tspan>
-                </text>
-              </g>
-            </svg>
-          </a>
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="#">
+                        <svg class="logo" align="center" viewBox="0 0 71 70" xmlns="http://www.w3.org/2000/svg">
+                            <title>Logo-sm</title>
+                            <g fill="none" fill-rule="evenodd">
+                                <path fill="#88D498" d="M.83 0h69.963v69.702H.83z" />
+                                <text font-family="LucidaGrande, Lucida Grande" font-size="44.544" fill="#FFF" transform="translate(.83)">
+                                    <tspan x="20.989" y="51.713">R</tspan>
+                                </text>
+                            </g>
+                        </svg>
+                    </a>
 
-        </div>
+                </div>
 
-        <!-- Main Menu -->
-        <div class="side-menu-container navbar-collapse collapse navbar-right">
-          <ul class="nav navbar-nav">
-            <!-- default navbar class for mobile screens-->
+                <!-- Main Menu -->
+                <div class="side-menu-container navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- default navbar class for mobile screens-->
 
-            <li class="profile visible-lg">
-              <span class="img-placeholder">
+                        <li class="profile visible-lg">
+                            <span class="img-placeholder">
                 <img src="image/cat.jpg" alt="" />
               </span>
-              <span class="text-placeholder">
+                            <span class="text-placeholder">
               <h2>Welcome back,</h2>
               <h1>{{name}}</h1>
               </span>
-            </li>
+                        </li>
 
-            <li class="dashboard active">
-              <a href="/blogs/new">
-                <span class="dashboard-link">
+                        <li class="dashboard active">
+                            <a href="/blogs/new">
+                                <span class="dashboard-link">
                   <i class="fa fa-pencil-square-o"></i>
                 </span> New Post
-              </a>
-            </li>
-            <li class="dashboard active">
-              <a href="/blogs">
-                <span class="dashboard-link">
+                            </a>
+                        </li>
+                        <li class="dashboard active">
+                            <a href="/blogs">
+                                <span class="dashboard-link">
                   <i class="fa fa-archive"></i>
                 </span> Collections
-              </a>
-            </li>
+                            </a>
+                        </li>
 
-            <li class="hidden-lg active">
-              <a href="#">
-                <span class="glyphicon glyphicon-user"> </span>
-                <span class="caret"></span>
-              </a>
-            </li>
+                        <li class="hidden-lg active">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-user"> </span>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
 
 
-          </ul>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
         </div>
-        <!-- /.navbar-collapse -->
-      </nav>
-
     </div>
-  </div>
 
-    {{{body}}} <!--ejs equiv = <% %>-->
+    {{{body}}}
+    <!--ejs equiv = <% %>-->
     <!--bower:js-->
     <script src='/lib/jquery/dist/jquery.min.js'></script>
     <script src='/lib/bootstrap/dist/js/bootstrap.min.js'></script>
     <script src='/lib/trumbowyg/dist/trumbowyg.js'></script>
-    <script src='/lib/trumbowyg/dist/plugins/upload/trumbowyg.upload.js'></script>
-    <script src='/lib/trumbowyg/dist/plugins/colors/trumbowyg.colors.js'></script>
+    <script src='/lib/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js'></script>
+    <script src='/lib/trumbowyg/dist/plugins/colors/trumbowyg.colors.min.js'></script>
     <script src='/lib/trumbowyg/dist/plugins/preformatted/trumbowyg.preformatted.min.js'></script>
+    <script src='/lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js'></script>
+    <script src='/lib/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js'></script>
     <!--endbower-->
 
     <!--inject:js-->
@@ -107,5 +123,6 @@
 
     <!-- <script>window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')</script> -->
 
-  </body>
+</body>
+
 </html>

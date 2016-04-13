@@ -3,12 +3,13 @@
     margin: 0;
     width: 100%;
     overflow: hidden;
+    border: none;
 }
 #form-list {
     padding: 10px 0;
 }
 .trumbowyg-editor.trumbowyg-reset-css {
-    max-height: 600px;
+    height: 700px;
     width: auto;
     overflow: hidden;
 }
@@ -51,8 +52,7 @@ img {
 }
 
 
-
-@include special-breakpoint1 {
+@include special-breakpoint1 { //desktop
     // mobile
     // #twyg-editor {
       .twyg-editor {
@@ -72,14 +72,7 @@ img {
   .twyg-editor {
     max-width: 80%;
     margin: 32px auto;
-    // margin-right: 20px;
-    // margin-left: 20px;
-    // margin-top: 20px;
-    // margin-bottom: 20px;
-
     overflow: hidden;
-    border: none;
-    // margin-left: 420px;
   }
   //end breakpoint
 }

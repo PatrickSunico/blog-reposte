@@ -47,10 +47,12 @@
       "main": [
         "dist/ui/trumbowyg.css",
         "dist/trumbowyg.js",
-        "dist/plugins/upload/trumbowyg.upload.js",
-        "dist/plugins/colors/trumbowyg.colors.js",
-        "dist/plugins/colors/ui/trumbowyg.colors.css",
-        "dist/plugins/preformatted/trumbowyg.preformatted.min.js"
+        "dist/plugins/upload/trumbowyg.upload.min.js",
+        "dist/plugins/colors/trumbowyg.colors.min.js",
+        "dist/plugins/colors/ui/trumbowyg.colors.min.css",
+        "dist/plugins/preformatted/trumbowyg.preformatted.min.js",
+        "dist/plugins/noembed/trumbowyg.noembed.min.js",
+        "dist/plugins/pasteimage/trumbowyg.pasteimage.min.js"
       ]
     }
   }

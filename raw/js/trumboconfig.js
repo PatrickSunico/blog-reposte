@@ -11,7 +11,7 @@ var uploadOptions = {
 
 $('textarea').trumbowyg({
     removeformatPasted: true,
-    fixedBtnPane: true,
+    // fixedBtnPane: true,
     fixedFullWidth: true,
     semantic: true,
     autogrow: true,
