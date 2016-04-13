@@ -61,11 +61,23 @@ img {
           margin: 0 auto;
           position: relative;
           padding: 32px 32px 32px 304px;
-          .btn-group {
-              @extend .btn-group;
-              .btn {
-                  @extend .btn;
-              }
-          }
       }
+}
+
+
+@include special-breakpoint2{ // mobile
+
+  .twyg-editor {
+    max-width: 80%;
+    margin: 32px auto;
+    // margin-right: 20px;
+    // margin-left: 20px;
+    // margin-top: 20px;
+    // margin-bottom: 20px;
+
+    overflow: hidden;
+    border: none;
+    // margin-left: 420px;
+  }
+  //end breakpoint
 }
