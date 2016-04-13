@@ -43,6 +43,8 @@ p {
 body {
     font-family: $font-stack;
     // $font-stack: 'openSans','sans-serif';
+    // overflow: hidden;
+
 }
 
 .btn-group {
@@ -56,6 +58,12 @@ body {
         font-size: 16px;
         border: solid 1px #000;
     }
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+  overflow: hidden;
 }
 
 // #0b132b

@@ -1,9 +1,5 @@
 @import '_mixins/_breakpoints.scss';
-.row {
-  margin-right: 0;
-  margin-left: 0;
-  overflow: hidden;
-}
+
 .navbar {
   border-radius: 0;
   background: $nav-color;
