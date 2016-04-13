@@ -11,7 +11,6 @@ var gulp = require('gulp'),
 
 //raw paths
 var rawPaths = {
-  // handleBars: ['raw/views/**/*.handlebars'],
   handleBars: ['views/**/*.handlebars'],
   scss: 'raw/scss/**/*.*',
   js: 'raw/js/**.js',
