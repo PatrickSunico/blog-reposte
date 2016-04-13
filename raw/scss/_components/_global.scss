@@ -45,7 +45,18 @@ body {
     // $font-stack: 'openSans','sans-serif';
 }
 
-
+.btn-group {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+    .btn {
+        padding: 14px;
+        border-radius: 0;
+        font-size: 16px;
+        border: solid 1px #000;
+    }
+}
 
 // #0b132b
 // #1c2541
