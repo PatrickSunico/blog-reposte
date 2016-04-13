@@ -18,35 +18,54 @@ img {
     max-width: 100%;
     height: auto;
 }
-
 .input-title {
-	width: 100%;
-	border: none;
-	border-radius: 0;
-	background: transparent;;
-	color: #000;
-	font-weight: 400;
-	// font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  appearance: none; /* for box shadows to show on iOS */
-
-
-  &:active {
-    outline: none;
-    background:transparent !important;
-  }
-  &:focus{
-    outline: none;
-    background:transparent !important;
-  }
-  &:-webkit-autofill {
-    box-shadow: 0 0 0px 1000px white inset;
-  }
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #000;
+    font-weight: 400;
+    // font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    appearance: none;
+    /* for box shadows to show on iOS */
+    &:active {
+        outline: none;
+        background: transparent !important;
+    }
+    &:focus {
+        outline: none;
+        background: transparent !important;
+    }
+    &:-webkit-autofill {
+        box-shadow: 0 0 0 1000px white inset;
+    }
+}
+.input-size {
+    max-width: 100%;
+    background: transparent;
+    color: #000;
+    border-bottom: solid 1px #000;
+    font-size: 30px;
 }
 
-.input-size {
-	max-width: 100%;
-	background:transparent;
-	color: #000;
-  border-bottom: solid 1px #000;
-  font-size: 30px;
+
+
+@include special-breakpoint1 {
+    // mobile
+    // #twyg-editor {
+      .twyg-editor {
+          overflow: hidden;
+          border: none;
+          height: auto;
+          max-width: 70%;
+          margin: 0 auto;
+          position: relative;
+          padding: 32px 32px 32px 304px;
+          .btn-group {
+              @extend .btn-group;
+              .btn {
+                  @extend .btn;
+              }
+          }
+      }
 }
