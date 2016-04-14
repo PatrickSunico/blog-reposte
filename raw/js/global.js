@@ -1,25 +1,31 @@
-
+//selectors
 $(document).ready(function(){
   $('img').addClass('imgClass');
   $('img').parent('p').addClass('paragraphClass');
   $('br').remove();
   $('p').removeAttr( 'style' );
   $('iframe').parent('p').addClass('videoClass');
-
   $('blockquote').removeAttr('style');
-
-
 });
 
 (function($) {
     'use strict';
+    //removes nbsp blockquote spacing
     $('span.content blockquote').each(function() {
+        if ('' === $.trim($(this).text())) {
+            $(this).remove();
+        }
+    });
+    //removes nbsp lines
+    $('span:not(span.img-placeholder, span.dashboard-link)').each(function() {
         if ('' === $.trim($(this).text())) {
             $(this).remove();
         }
     });
 }(jQuery));
 
+
+//video resize to parent container
 $(function() {
     var $allVideos = $('iframe,object, embed'),
     $mainwrapper = $('.side-body');
