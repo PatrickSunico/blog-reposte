@@ -6,14 +6,10 @@ $(document).ready(function(){
   $('p').removeAttr( 'style' );
   $('iframe').parent('p').addClass('videoClass');
 
+  $('blockquote').removeAttr('style');
+
 
 });
-
-
-// $('blockquote').filter(function(){
-//     'use strict';
-//     return $.trim(this.innerHTML) === "&nbsp;"
-// }).remove();
 
 (function($) {
     'use strict';
@@ -23,11 +19,6 @@ $(document).ready(function(){
         }
     });
 }(jQuery));
-
-
-
-
-
 
 $(function() {
     var $allVideos = $('iframe,object, embed'),
