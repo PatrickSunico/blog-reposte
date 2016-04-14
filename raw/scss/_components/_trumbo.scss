@@ -3,13 +3,11 @@
     margin: 0;
     width: 100%;
     overflow: hidden;
-    // border: none;
 }
 #form-list {
     padding: 10px 0;
 }
 .trumbowyg-editor.trumbowyg-reset-css {
-    height: 700px;
     width: auto;
     overflow: hidden;
 }
@@ -28,9 +26,7 @@ img {
     background: transparent;
     color: #000;
     font-weight: 400;
-    // font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
     appearance: none;
-    /* for box shadows to show on iOS */
     &:active {
         outline: none;
         background: transparent !important;
@@ -51,6 +47,16 @@ img {
     font-size: 30px;
 }
 
+.btn.btn-sharp {
+    padding: 18px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    background: $_submit-button-color;
+    color: #fff;
+}
 
 @include special-breakpoint1 { //desktop
     // mobile
