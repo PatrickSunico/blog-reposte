@@ -59,7 +59,7 @@ gulp.task('inject', function(){
 gulp.task('sass',function(){
   return gulp.src(rawPaths.scss)
          .pipe(plumber())
-         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
          .pipe(prefix())
          .pipe(rename('main.min.css'))
          .pipe(gulp.dest(publicPath.css));

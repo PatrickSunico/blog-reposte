@@ -6,33 +6,27 @@ $(document).ready(function(){
   $('p').removeAttr( 'style' );
   $('iframe').parent('p').addClass('videoClass');
 
+
 });
 
-/*span.content p.videoClass{
-  padding: 0;
-}
-p.videoClass {
-    width: 100% !important;
-    height: auto !important;
-    padding: 0;
-}*/
+
+// $('blockquote').filter(function(){
+//     'use strict';
+//     return $.trim(this.innerHTML) === "&nbsp;"
+// }).remove();
+
+(function($) {
+    'use strict';
+    $('span.content blockquote').each(function() {
+        if ('' === $.trim($(this).text())) {
+            $(this).remove();
+        }
+    });
+}(jQuery));
 
 
-// var styles = {
-//  backgroundColor: pink,
-//  font-weight: “bold”
-// };
-//
-// $(#special”).css(styles);
 
 
-// var iframeStyle = {
-//   padding:0,
-//   width: 100,
-//   height: 'auto'
-// };
-//
-// $('p.videoClass').css(iframeStyle);
 
 
 $(function() {
