@@ -1,0 +1,18 @@
+<div class="twyg-editor">
+    <div class="container-fluid">
+
+      <form action="/blogs/{{blog._id}}?_method=PUT" method="POST" id="form-list">
+
+        <div class="field">
+          <!-- <label for="formGroupExampleInput">Title</label> -->
+          <input type="text" name="blog[title]"  class="input-title input-size" id="formGroupExampleInput" placeholder="{{blog.title}}">
+        </div>
+        <!-- </fieldset> -->
+        <div class="field">
+          <textarea id="editor" name="blog[body]" style="height: 90vh; border:none;">{{blog.body}}</textarea>
+        </div>
+        <input class="btn-sharp btn btn-lg btn-primary" type="submit" value="Submit">
+      </form>
+
+    </div>
+</div>

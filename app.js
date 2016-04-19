@@ -11,6 +11,7 @@ var express = require('express'),
     dateFormat = require('dateformat'),
     Handlebars = require('handlebars'),
     HandlebarsIntl = require('handlebars-intl'),
+    methodOverride = require('method-override'),
     exphbs = require('express-handlebars');
 
 /*********************************************/
@@ -23,6 +24,9 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+//method Override
+app.use(methodOverride('_method'));
 
 //view engine init
 app.engine('handlebars', exphbs({
@@ -46,8 +50,8 @@ app.use(express.static('public/img/**.*'));
 
 mongoose.connect('mongodb://localhost/reposte_app');
 var blogSchema = new mongoose.Schema({
-    title: String,
-    name: String, //UserName
+    title: {type: String, required: true, trim: true},
+    placeholderName: String, //UserName
     body: String,
     created: {
         type: Date,
@@ -55,16 +59,16 @@ var blogSchema = new mongoose.Schema({
     }
 
 }, {
-    timestamps: {
-        createdAt: 'created_at'
-    }
+  timestamps: true
 });
+
+
 
 //Default Blog Model
 var Blog = mongoose.model('Blog', blogSchema);
 
 //Name Placeholder
-var name = 'Patrick';
+var placeholderName = 'Patrick';
 
 
 /*********************************************/
@@ -82,11 +86,11 @@ var port = Number(process.env.PORT || 3000);
 var paths = {
     index: 'partials/index',
     new: 'partials/newblog',
-    show: 'partials/show'
+    show: 'partials/show',
+    edit: 'partials/edit'
 };
 
 /*********************************************/
-
 
 
 //Routes
@@ -100,14 +104,13 @@ app.get('/', function(req, res) {
 
 //Index show all blogs
 app.get('/blogs', function(req, res) {
-
     Blog.find({}, function(err, blogs) {
 
         if (err) {
             console.log(err);
         } else {
             res.render(paths.index, {
-                name: name,
+                name: placeholderName,
                 blogs: blogs
             });
         }
@@ -117,7 +120,7 @@ app.get('/blogs', function(req, res) {
 //New Route
 app.get('/blogs/new', function(req, res) {
     res.render(paths.new, {
-        name: name
+        name: placeholderName
     });
 });
 
@@ -134,8 +137,7 @@ app.post('/blogs', function(req, res) {
     });
 });
 
-// Show individual Blog route
-
+// Show specific Blog route
 app.get('/blogs/:id', function(req, res) {
     Blog.findById(req.params.id, function(err, foundBlog) {
         if (err) {
@@ -150,6 +152,31 @@ app.get('/blogs/:id', function(req, res) {
 
 });
 
+
+//Edit Route
+app.get('/blogs/:id/edit', function(req,res){
+  Blog.findById(req.params.id, function(err,foundBlog){
+    if(err){
+      console.log(err);
+      res.redirect('/blogs');
+    } else {
+      res.render(paths.edit, {blog:foundBlog});
+
+    }
+  });
+});
+
+//Update Route
+app.put('/blogs/:id', function(req, res) {
+  Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+    if(err) {
+      console.log(err);
+      res.redirect('/blogs');
+    } else {
+      res.redirect('/blogs/' + req.params.id);
+    }
+  });
+});
 
 //listening port
 app.listen(port, function() {
