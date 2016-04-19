@@ -1,21 +1,12 @@
 <style type="text/css">
-  p {
+  /*p {
     text-align: left;
-  }
-  /*img .imgClass{
-      display: none;
-    }
-  .paragraphClass{
-    display: none;
   }*/
 </style>
-
 {{#each blogs}}
 
     <div class="row">
-        <!-- uncomment code for absolute positioning tweek see top comment in css -->
-        <!-- <div class="absolute-wrapper"> </div> -->
-        <!-- Menu -->
+
 
         <!-- Main Content -->
         <div class="side-body">
@@ -27,7 +18,7 @@
 
         <span class="date">
           <p>
-            <strong>Posted on:  {{../date}} <!--{{this.created}}-->   </strong>
+            <strong>Posted on: {{formatDate this.created day="numeric" month="long" year="numeric"}} ({{formatRelative this.created }})  </strong>
           </p>
         </span>
 
