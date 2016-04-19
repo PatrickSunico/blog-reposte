@@ -1,7 +1,7 @@
 //Dependencies
 /*********************************************/
 
-"use strict";
+'use strict';
 
 var express = require('express'),
 app = express(),
@@ -55,15 +55,6 @@ var name = 'Patrick';
 var Blog = mongoose.model('Blog', blogSchema);
 //End
 
-// Blog.create({
-//   title: "Test Blog",
-//   image:"",
-//   created:
-//   body:
-//   "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no"
-// });
-
-//End
 
 
 //Misc
@@ -126,8 +117,15 @@ app.post('/blogs', function(req, res){
       res.redirect('/blogs');
     }
   });
-
 });
+
+// Show individual Blog route
+
+app.get('/blogs/:id', function(req, res){
+  res.send('show Page');
+});
+
+
 
 
 //listening port
