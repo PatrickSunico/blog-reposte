@@ -1,23 +1,32 @@
-
 <div class="row">
-  <!-- Main Content -->
-  <div class="side-body">
-    <div class="wrapper-container">
-      <!-- <div class="container-fluid"> -->
-        <span class="blog-title">
+    <!-- Main Content -->
+    <div class="side-body">
+        <div class="wrapper-container">
+            <!-- <div class="container-fluid"> -->
+            <span class="blog-title">
           <h1> {{blog.title}} </h1>
         </span>
 
-        <span class="date">
+            <span class="date">
           <p>
             <strong>Posted on:  <!--{{../date}}--> {{formatDate blog.created day="numeric" month="long" year="numeric"}} ({{formatRelative blog.created }})  </strong>
           </p>
         </span>
 
-        <span class="content">
-          {{{blog.body}}}
-        </span>
+            <span class="content">
+              {{{blog.body}}}
+            </span>
+        </div>
+
+        <!-- <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <form action="/blogs/{{blog._id}}?_method=DELETE" method="POST">
+                    <button type="button" class="btn btn-default">
+                        <i class="fa fa-trash"></i> Delete
+                    </button>
+                </form>
+            </div>
+        </div> -->
+        <!-- </div> -->
     </div>
-  <!-- </div> -->
-  </div>
 </div>

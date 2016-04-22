@@ -174,16 +174,14 @@ app.put('/blogs/:id', function(req, res) {
   Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
     if(err) {
       console.log(err);
-      res.redirect('/blogs');
     } else {
-      res.redirect('/blogs/' + req.params.id);
+      res.redirect('/blogs');
     }
   });
 });
 
 //Delete Route
-app.delete('/blogs', function(req,res){
-
+app.delete('/blogs/:id', function(req,res){
   Blog.findByIdAndRemove(req.params.id, function(err){
     if(err){
       console.log(err);
