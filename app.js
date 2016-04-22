@@ -101,10 +101,13 @@ app.get('/', function(req, res) {
     res.redirect('/blogs');
 });
 
-
 //Index show all blogs
 app.get('/blogs', function(req, res) {
     Blog.find({}, function(err, blogs) {
+
+      blogs.sort(function(a, b) { //sort algorithm based on post dates
+        return (a.created > b.created) ? -1 : ((a.created < b.created) ? 1 : 0);
+      });
 
         if (err) {
             console.log(err);
@@ -174,6 +177,19 @@ app.put('/blogs/:id', function(req, res) {
       res.redirect('/blogs');
     } else {
       res.redirect('/blogs/' + req.params.id);
+    }
+  });
+});
+
+//Delete Route
+app.delete('/blogs', function(req,res){
+
+  Blog.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      console.log(err);
+      res.redirect('/blogs');
+    } else {
+      res.redirect('/blogs');
     }
   });
 });

@@ -1,5 +1,5 @@
 <style type="text/css">
-  /*p {
+    /*p {
     text-align: left;
   }*/
 </style>
@@ -10,42 +10,45 @@
 
         <!-- Main Content -->
         <div class="side-body">
-          <div class="wrapper-container">
-            <!-- <div class="container-fluid"> -->
+            <div class="wrapper-container">
+                <!-- <div class="container-fluid"> -->
                 <span class="blog-title">
                     <h1> {{this.title}} </h1>
                 </span>
 
-        <span class="date">
+                <span class="date">
           <p>
             <strong>Posted on: {{formatDate this.created day="numeric" month="long" year="numeric"}} ({{formatRelative this.created }})  </strong>
           </p>
         </span>
 
-            <span class="content">
+                <span class="content">
               {{{this.body}}}
             </span>
-      </div>
-      <!-- </div> -->
+            </div>
+            <!-- </div> -->
 
 
 
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                 <div class="btn-group" role="group">
-                  <a href="/blogs/{{this._id}}/edit">
-                    <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Edit
-                    </button>
-                  </a>
+                    <a href="/blogs/{{this._id}}/edit">
+                        <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Edit
+                        </button>
+                    </a>
                 </div>
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default"><i class="fa fa-trash"></i> Delete
+                    <button type="button" class="btn btn-default">
+                        <i class="fa fa-trash"></i> Delete
                     </button>
                 </div>
+
                 <div class="btn-group" role="group">
                     <a href="/blogs/{{this._id}}">
-                      <button type="button" class="btn btn-default">
-                        <i class="fa fa-external-link"></i> View
-                    </button></a>
+                        <button type="button" class="btn btn-default">
+                            <i class="fa fa-external-link"></i> View
+                        </button>
+                    </a>
                 </div>
             </div>
             <!--  end side-body -->
