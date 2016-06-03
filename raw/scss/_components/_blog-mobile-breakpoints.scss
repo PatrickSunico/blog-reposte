@@ -9,10 +9,16 @@
     border: none;
 
     .btn-group {
-      @extend .btn-group;
-      .btn {
-        @extend .btn;
-      }
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+        .btn {
+            padding: 14px;
+            border-radius: 0;
+            font-size: 16px;
+            border: solid 1px #000;
+        }
     }
   }
   //end breakpoint
